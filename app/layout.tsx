@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NavigationMenuDemo } from "@/components/navbar";
+import { Building } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +28,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavigationMenuDemo></NavigationMenuDemo>
+        {/* Logo in top left */}
+        <header className="p-6">
+          <div className="flex items-center gap-2">
+            <Building className="h-8 w-8 text-primary" />
+            <span className="text-2xl font-bold text-foreground">Atrium</span>
+          </div>
+        </header>
         {children}
       </body>
     </html>
